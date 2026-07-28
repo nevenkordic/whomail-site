@@ -1,0 +1,157 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="shell">
+    <article class="mail-card" aria-label="An email from WhoMail">
+      <div class="mail-chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="mail-headers">
+        <div class="mail-field"><span class="mail-label">From:</span> <span class="mail-value"><strong>WhoMail</strong> &lt;hello@whomail.com.au&gt;</span></div>
+        <div class="mail-field"><span class="mail-label">To:</span> <span class="mail-value">You</span></div>
+        <div class="mail-field"><span class="mail-label">Subject:</span> <span class="mail-value mail-subject">Your mail, back in your hands</span></div>
+      </div>
+      <div class="mail-body">
+        <p>Hi,</p>
+        <p>WhoMail is a native email app for iPhone, iPad and Mac. It brings your
+        Microsoft&nbsp;365, Gmail, iCloud, Fastmail and IMAP mailboxes into one
+        fast unified inbox — with instant notifications that never expose your
+        mail to anyone, including us.</p>
+        <p class="mail-quote">&gt; No ads. No cloud AI reading your mail.<br>&gt; No tracking. Just email, done properly.</p>
+        <p>Kind regards,<br>The WhoMail team</p>
+        <div class="mail-actions">
+          <a class="btn btn-primary" href="#download">Get WhoMail</a>
+          <a class="btn btn-quiet" href="{{ "docs/" | relURL }}">Read the manual</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="shell">
+    <p class="eyebrow">Inbox · 7 messages</p>
+    <h2>Everything a mail app owes you</h2>
+    <ol class="inbox-list">
+      <li class="inbox-row">
+        <span class="unread-dot" aria-hidden="true"></span>
+        <div class="inbox-text">
+          <h3>One inbox for every account</h3>
+          <p>Outlook and Microsoft&nbsp;365, Gmail, iCloud, Fastmail and any IMAP
+          server, together in a unified inbox or kept apart — your choice.
+          Full folder support, move to folder, drafts that stay in sync.</p>
+        </div>
+      </li>
+      <li class="inbox-row">
+        <span class="unread-dot" aria-hidden="true"></span>
+        <div class="inbox-text">
+          <h3>Instant push, without the creep <span class="chip">Pro</span></h3>
+          <p>New-mail banners land in seconds while the app is open and within
+          about a minute when it's closed. The push itself carries no mail
+          content — the rich preview is fetched by your device, from your
+          mailbox, after the banner arrives. Mark read, delete or reply
+          straight from the notification.</p>
+        </div>
+      </li>
+      <li class="inbox-row">
+        <span class="unread-dot" aria-hidden="true"></span>
+        <div class="inbox-text">
+          <h3>Rules, snooze and send later</h3>
+          <p>File newsletters automatically with mail rules. Snooze a message
+          until you can deal with it. Write now, schedule the send for
+          tomorrow morning.</p>
+        </div>
+      </li>
+      <li class="inbox-row">
+        <span class="unread-dot" aria-hidden="true"></span>
+        <div class="inbox-text">
+          <h3>Calendar and invitations built in</h3>
+          <p>Meeting invites show an Accept / Tentative / Decline banner right
+          on the message. Tap an .ics attachment to add the event to your
+          calendar. Month view, RSVP, out-of-office — covered.</p>
+        </div>
+      </li>
+      <li class="inbox-row">
+        <span class="unread-dot" aria-hidden="true"></span>
+        <div class="inbox-text">
+          <h3>Search that actually finds things</h3>
+          <p>Full-text search across subjects, senders, recipients and the
+          entire body of every message — and it reaches into the server for
+          mail you haven't synced yet.</p>
+        </div>
+      </li>
+      <li class="inbox-row">
+        <span class="unread-dot" aria-hidden="true"></span>
+        <div class="inbox-text">
+          <h3>Native on iPhone, iPad and Mac</h3>
+          <p>Built in Swift, not a web page in a window. It launches fast,
+          scrolls smooth, respects dark mode and keeps working offline.</p>
+        </div>
+      </li>
+      <li class="inbox-row">
+        <span class="unread-dot" aria-hidden="true"></span>
+        <div class="inbox-text">
+          <h3>Readable email, even the badly built kind</h3>
+          <p>Every message renders on a clean light paper card, so dark-mode
+          newsletters can't turn their own text invisible. Your mail stays
+          legible.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="privacy-band">
+  <div class="shell">
+    <p class="eyebrow">Subject: What we can't see</p>
+    <h2>Private by architecture, not by promise</h2>
+    <div class="privacy-cols">
+      <p>Your mail is processed on your device and stored in your device's
+      keychain-protected database. Notification relays never see message
+      content — pushes say only "new mail", and your device fills in the rest
+      itself. Remove an account and any stored credential is deleted from our
+      relay in the same breath.</p>
+      <p>There is no cloud AI, no analytics profile, no ad model waiting in
+      the wings. WhoMail is paid software with one customer: you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="shell">
+    <p class="eyebrow">Subject: What it costs</p>
+    <h2>Free to use. Pro when you need more.</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Free</h3>
+        <p class="plan-price">A$0</p>
+        <ul>
+          <li>One email account</li>
+          <li>Unified inbox, folders and search</li>
+          <li>Compose, signatures, attachments</li>
+          <li>Calendar and contacts</li>
+          <li>Rules, snooze and send later</li>
+        </ul>
+      </div>
+      <div class="plan plan-pro">
+        <h3>Pro</h3>
+        <p class="plan-price">A$4.99<span>/month</span></p>
+        <p class="plan-alt">or A$39.99/year with a 7-day free trial</p>
+        <ul>
+          <li>Everything in Free</li>
+          <li>Unlimited accounts</li>
+          <li>Instant push notifications</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="shell download-inner">
+    <h2>Put your mail back in your hands</h2>
+    <p>WhoMail is coming to the App Store for iPhone, iPad and Mac.</p>
+    <div class="mail-actions">
+      <a class="btn btn-primary" href="{{ site.Params.appStoreURL }}">Download on the App Store</a>
+      <a class="btn btn-quiet" href="{{ "docs/getting-started/" | relURL }}">Set up your first account</a>
+    </div>
+  </div>
+</section>
+{{ end }}

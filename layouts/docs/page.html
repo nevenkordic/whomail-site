@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="shell docs-shell">
+  {{ partial "docs-sidebar.html" . }}
+  <article class="docs-article">
+    <p class="eyebrow">Subject: {{ .Title }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="docs-lede">{{ . }}</p>{{ end }}
+    {{ .Content }}
+    <div class="docs-pager">
+      {{/* Hugo's Prev/NextInSection run opposite to weight order, so they are swapped here. */}}
+      {{ with .NextInSection }}<a class="pager-link pager-prev" href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+      {{ with .PrevInSection }}<a class="pager-link pager-next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+    </div>
+  </article>
+</div>
+{{ end }}

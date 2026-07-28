@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="shell docs-shell">
+  {{ partial "docs-sidebar.html" . }}
+  <article class="docs-article">
+    <p class="eyebrow">Subject: User manual</p>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <ol class="chapter-list">
+      {{ range .Pages.ByWeight }}
+      <li>
+        <a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong>
+        <span>{{ .Description }}</span></a>
+      </li>
+      {{ end }}
+    </ol>
+  </article>
+</div>
+{{ end }}

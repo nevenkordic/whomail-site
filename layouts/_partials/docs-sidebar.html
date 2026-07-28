@@ -1,0 +1,11 @@
+<nav class="docs-sidebar" aria-label="Manual chapters">
+  <p class="sidebar-title"><a href="{{ "docs/" | relURL }}">User manual</a></p>
+  <ul>
+    {{ $current := . }}
+    {{ range (where site.RegularPages "Section" "docs").ByWeight }}
+    <li>
+      <a href="{{ .RelPermalink }}" {{ if eq . $current }}aria-current="page"{{ end }}>{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</nav>

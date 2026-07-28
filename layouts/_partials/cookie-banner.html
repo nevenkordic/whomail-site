@@ -1,0 +1,49 @@
+<div id="cookie-banner" class="cookie-banner" hidden role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <div class="shell cookie-banner-inner">
+    <p>
+      We use cookies to measure how this site is used.
+      <a href="{{ "docs/privacy/" | relURL }}">Privacy</a>
+    </p>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-quiet" data-cookie-choice="declined">Decline</button>
+      <button type="button" class="btn btn-primary" data-cookie-choice="accepted">Accept</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = 'whomail-cookie-consent';
+  var banner = document.getElementById('cookie-banner');
+  if (!banner) return;
+
+  function stored() {
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  }
+
+  function save(choice) {
+    try { localStorage.setItem(KEY, choice); } catch (e) {}
+  }
+
+  function apply(choice) {
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', {
+        analytics_storage: choice === 'accepted' ? 'granted' : 'denied'
+      });
+    }
+  }
+
+  var choice = stored();
+  if (!choice) {
+    banner.hidden = false;
+  }
+
+  banner.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-cookie-choice]');
+    if (!btn) return;
+    var next = btn.getAttribute('data-cookie-choice');
+    save(next);
+    apply(next);
+    banner.hidden = true;
+  });
+})();
+</script>
