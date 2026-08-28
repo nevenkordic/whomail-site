@@ -2,6 +2,12 @@
 title: Privacy and security
 description: Where your mail lives, what leaves your device, and what never will.
 weight: 90
+# App Store Connect and older builds link /privacy — keep these alive so
+# the policy link in the apps and in store metadata never 404s again
+# (App Review rejection bca8495f, guideline 3.1.2(c)).
+aliases:
+  - /privacy/
+  - /privacy-policy/
 ---
 
 ## The short version
@@ -46,6 +52,14 @@ Microsoft and Google accounts sign in through those providers' own
 official sheets (OAuth). WhoMail never sees those passwords. IMAP
 providers use app passwords, which you can revoke at the provider at
 any time without changing your real password.
+
+## Advertising
+
+WhoMail does not include advertising. There is no advertising SDK, no
+banner or video ads, and WhoMail does not use the device advertising
+identifier. WhoMail Pro is an optional in-app purchase. Mail you
+receive may contain promotional content from senders; that is the
+sender's message, not WhoMail advertising.
 
 ## Questions
 
