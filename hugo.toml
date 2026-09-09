@@ -6,7 +6,7 @@ enableRobotsTXT = true
 disableKinds = ['taxonomy', 'term']
 
 [params]
-  description = 'WhoMail is a fast, private, native email client for iPhone, iPad and Mac. Outlook, Gmail, iCloud, Fastmail and any IMAP mailbox in one unified inbox.'
+  description = 'WhoMail is a fast, private, native email client for iPhone, iPad, Mac and Android. Outlook, iCloud, Fastmail, Yahoo and any IMAP mailbox in one unified inbox.'
   appStoreURL = '#download'
 
 [markup.goldmark.renderer]

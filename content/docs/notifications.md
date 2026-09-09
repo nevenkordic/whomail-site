@@ -12,17 +12,19 @@ weight: 40
 | App closed or in background | About 60–90 seconds |
 
 While the app is open, WhoMail holds a live connection to your mail
-server (IMAP IDLE), so new mail appears almost immediately. When the
-app is closed, WhoMail's push relay notices new mail and sends a push
-notification to your iPhone or iPad.
+server (IMAP IDLE) and polls on a short timer, so new mail appears
+almost immediately. When the app is closed, WhoMail's push relay
+notices new mail and sends a push to your iPhone, iPad or Android
+phone.
 
-Instant push is a [WhoMail Pro](../pro/) feature.
+**Instant Push is included for free.** It is on by default. You do
+not need WhoMail Pro for closed-app alerts.
 
 ## Acting from the banner
 
-Notification banners show the sender, subject and a preview, and offer
-three actions without opening the app: **Mark as Read**, **Delete**,
-and **Reply**.
+Notification banners show the sender, subject and a preview, and
+offer three actions without opening the app: **Mark as Read**,
+**Delete**, and **Reply**.
 
 ## What the push contains — and what it doesn't
 
@@ -31,34 +33,41 @@ subject, no content. When it arrives, your device fetches the details
 directly from your mailbox and builds the rich banner locally. The
 relay never sees your messages.
 
-For Outlook accounts, the relay holds no credentials at all — Microsoft
-notifies it that something changed, nothing more. For IMAP accounts,
-enabling instant push stores that account's app password with the
-relay, encrypted, so it can check your mailbox for new mail. Removing
-the account from WhoMail, or turning instant push off, deletes that
+- **Outlook:** the relay holds no credentials. Microsoft notifies it
+  that something changed, nothing more.
+- **iCloud, Fastmail, Yahoo and custom IMAP:** enabling Instant Push
+  stores that account's app password with the relay, encrypted, so
+  it can check the mailbox for new mail. It reads mailbox state, not
+  message bodies.
+
+Removing the account, or turning Instant Push off, deletes that
 credential from the relay immediately.
+
+Apple devices register an APNs token; Android registers an FCM token.
+The relay's job is the same on both: wake the device so *it* can
+talk to your provider.
 
 ## Turning things on and off
 
-- **Master switch:** Settings → Notifications & Sounds → Notify on new
-  mail.
-- **Per account:** each account has its own toggle in the same screen.
-- **Instant Push (IMAP accounts):** on by default; turn it off per
-  account if you'd rather WhoMail never stores that password with the
-  relay. You'll still get mail when the app checks in the foreground.
+- **Master switch:** Settings → Accounts → Notifications & Sounds →
+  Notify on new mail (also reflected under Settings → General).
+- **Per account:** each account has its own toggle on that screen.
+- **Instant Push (IMAP-family accounts):** on by default; turn it off
+  per account if you'd rather WhoMail never store that password with
+  the relay. You'll still get mail when the app is open.
 
 ## On the Mac
 
-New-mail alerting is delivered to your iPhone and iPad. The Mac app
+New-mail banners are delivered to your iPhone and iPad. The Mac app
 keeps itself current with a live connection while it's running, and
-enabling instant push on the Mac registers the mailbox so pushes reach
-your iPhone.
+enabling Instant Push on the Mac registers the mailbox so pushes
+reach your phone.
 
-## One banner, one device
+## One banner, one Apple device
 
-Apple delivers each notification to exactly one device: if your iPhone
-is locked and you're wearing an Apple Watch, the banner goes to the
-Watch. That's an Apple platform rule, not a WhoMail setting.
+Apple delivers each notification to exactly one device: if your
+iPhone is locked and you're wearing an Apple Watch, the banner goes
+to the Watch. That's an Apple platform rule, not a WhoMail setting.
 
 If notifications aren't arriving, see
 [Troubleshooting](../troubleshooting/).
